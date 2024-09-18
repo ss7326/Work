@@ -18,12 +18,14 @@ function case2() {
   // month loop
   for (let m = 1; m <= mon; m++) {
     // days loop
-    dd.forEach((d) => {
-      if (dd.length < 2) {
-        mmdd = String(m) + "0" + String(dd[d]);
+    for (let day = 1; day <= dd[m - 1]; day++) {
+      if (String(day).length < 2) {
+        mmdd = String(m) + "0" + String(day);
       } else {
-        mmdd = String(m) + String(d);
+        mmdd = String(m) + String(day);
       }
+
+      // digit 2
       mmdd = String(Number(mmdd) + digit_2);
 
       // 6,7 loop
@@ -31,7 +33,7 @@ function case2() {
         output = "Y" + mmdd + digit_6_7_ele;
         print_on_whiteboard(output);
       });
-    });
+    }
   }
 }
 
