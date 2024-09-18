@@ -1,3 +1,5 @@
+// const sprintf = require("sprintf-js").sprintf;
+
 let whiteboard = document.getElementById("whiteboard");
 console.log(whiteboard);
 
@@ -17,7 +19,11 @@ function case3() {
 
   dept_cd.forEach((element) => {
     for (let month = 1; month < 13; month++) {
-      print_on_whiteboard(element + String(month));
+      if (String(month).length < 2) {
+        print_on_whiteboard("Y" + element + "0" + String(month));
+      } else {
+        print_on_whiteboard("Y" + element + String(month));
+      }
     }
   });
 }
